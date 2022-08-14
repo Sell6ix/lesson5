@@ -22,6 +22,7 @@ def get_by_pk(pk,data):
 def get_by_skill(skill_name,data):
     arr=[]
     for item in data:
-        if skill_name in item.skills:
+        skills = item.skills.split(', ')
+        if skill_name in skills:
             arr.append(item)
     return arr
